@@ -1,0 +1,13 @@
+import puppeteer from 'puppeteer-core';
+const [out] = process.argv.slice(2);
+const browser = await puppeteer.launch({ executablePath: '/usr/bin/google-chrome', headless: 'new', args: ['--no-sandbox', '--enable-unsafe-swiftshader', '--use-gl=angle', '--use-angle=swiftshader'] });
+const page = await browser.newPage();
+await page.setViewport({ width: 1280, height: 800 });
+page.on('pageerror', (e) => console.log('[pageerror]', String(e).slice(0, 300)));
+await page.goto('http://localhost:8000/?noidle', { waitUntil: 'load' });
+await page.waitForFunction('window.__ready || window.__error', { timeout: 120000 });
+const [happy] = await page.$$('#emoBar button').then((b) => [b[2]]);
+await happy.click(); await new Promise((r) => setTimeout(r, 4000));
+console.log('label:', await page.$eval('#emotion', (e) => e.textContent), '| buttons:', await page.$$eval('#emoBar button', (b) => b.map((x) => x.textContent + (x.classList.contains('on') ? '*' : ''))));
+await page.screenshot({ path: out });
+await browser.close();

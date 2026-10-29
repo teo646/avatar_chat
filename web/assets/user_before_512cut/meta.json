@@ -1,0 +1,255 @@
+{
+ "type": "rgbavatar",
+ "count": 39879,
+ "n_blend": 20,
+ "n_faces": 10032,
+ "n_vertices": 5083,
+ "emotions": [
+  "neutral",
+  "happy",
+  "sad",
+  "angry",
+  "surprised",
+  "blink"
+ ],
+ "channels": [
+  "x",
+  "y",
+  "z",
+  "qw",
+  "qx",
+  "qy",
+  "qz",
+  "r",
+  "g",
+  "b"
+ ],
+ "fov_y_deg": 20.0,
+ "camera_distance": 1.0,
+ "target": [
+  0.0,
+  -0.01,
+  0.0
+ ],
+ "neck_pivot": [
+  0.00019078738908986172,
+  -0.009526293849135996,
+  -0.055003573818154974
+ ],
+ "self_test_max_error": {
+  "neutral": [
+   2.2973947605420264e-08,
+   3.686469721153607e-07,
+   1.9550540941715155e-07
+  ],
+  "happy": [
+   2.2579440345227297e-08,
+   4.3191138582310273e-07,
+   2.1357603596783292e-07
+  ],
+  "sad": [
+   2.247037508840144e-08,
+   3.668962850478241e-07,
+   1.8426010806038562e-07
+  ],
+  "angry": [
+   2.2384576997547256e-08,
+   4.871369853609586e-07,
+   2.766182540803186e-07
+  ],
+  "surprised": [
+   2.353281861044998e-08,
+   3.1563955221747264e-07,
+   2.1086317492091666e-07
+  ],
+  "blink": [
+   2.2257626769439653e-08,
+   3.7696198773584655e-07,
+   2.081688168509288e-07
+  ]
+ },
+ "arrays": {
+  "xyz0": {
+   "offset": 0,
+   "shape": [
+    39879,
+    3
+   ],
+   "dtype": "float32"
+  },
+  "rot0": {
+   "offset": 478548,
+   "shape": [
+    39879,
+    4
+   ],
+   "dtype": "float32"
+  },
+  "rgb0": {
+   "offset": 1116612,
+   "shape": [
+    39879,
+    3
+   ],
+   "dtype": "float32"
+  },
+  "scale": {
+   "offset": 1595160,
+   "shape": [
+    39879,
+    3
+   ],
+   "dtype": "float32"
+  },
+  "opacity": {
+   "offset": 2073708,
+   "shape": [
+    39879
+   ],
+   "dtype": "float32"
+  },
+  "dg": {
+   "offset": 2233224,
+   "shape": [
+    39879,
+    20,
+    10
+   ],
+   "dtype": "float32"
+  },
+  "face_id": {
+   "offset": 34136424,
+   "shape": [
+    39879
+   ],
+   "dtype": "uint32"
+  },
+  "bary": {
+   "offset": 34295940,
+   "shape": [
+    39879,
+    3
+   ],
+   "dtype": "float32"
+  },
+  "faces": {
+   "offset": 34774488,
+   "shape": [
+    10032,
+    3
+   ],
+   "dtype": "uint32"
+  },
+  "face_uvs": {
+   "offset": 34894872,
+   "shape": [
+    10032,
+    3,
+    2
+   ],
+   "dtype": "float32"
+  },
+  "psi": {
+   "offset": 35135640,
+   "shape": [
+    6,
+    20
+   ],
+   "dtype": "float32"
+  },
+  "verts": {
+   "offset": 35136120,
+   "shape": [
+    6,
+    5083,
+    3
+   ],
+   "dtype": "float32"
+  },
+  "x_in": {
+   "offset": 35502096,
+   "shape": [
+    6,
+    129
+   ],
+   "dtype": "float32"
+  },
+  "posedirs_neck": {
+   "offset": 35505192,
+   "shape": [
+    9,
+    15249
+   ],
+   "dtype": "float32"
+  },
+  "vroot": {
+   "offset": 36054156,
+   "shape": [
+    6,
+    5083,
+    3
+   ],
+   "dtype": "float32"
+  },
+  "w0": {
+   "offset": 36420132,
+   "shape": [
+    5083
+   ],
+   "dtype": "float32"
+  },
+  "joint": {
+   "offset": 36440464,
+   "shape": [
+    6,
+    3
+   ],
+   "dtype": "float32"
+  },
+  "mlp_w1": {
+   "offset": 36440536,
+   "shape": [
+    128,
+    129
+   ],
+   "dtype": "float32"
+  },
+  "mlp_b1": {
+   "offset": 36506584,
+   "shape": [
+    128
+   ],
+   "dtype": "float32"
+  },
+  "mlp_w2": {
+   "offset": 36507096,
+   "shape": [
+    128,
+    128
+   ],
+   "dtype": "float32"
+  },
+  "mlp_b2": {
+   "offset": 36572632,
+   "shape": [
+    128
+   ],
+   "dtype": "float32"
+  },
+  "mlp_w3": {
+   "offset": 36573144,
+   "shape": [
+    20,
+    128
+   ],
+   "dtype": "float32"
+  },
+  "mlp_b3": {
+   "offset": 36583384,
+   "shape": [
+    20
+   ],
+   "dtype": "float32"
+  }
+ }
+}

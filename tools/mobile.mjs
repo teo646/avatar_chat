@@ -1,0 +1,13 @@
+import puppeteer from 'puppeteer-core';
+const [out] = process.argv.slice(2);
+const browser = await puppeteer.launch({ executablePath: '/usr/bin/google-chrome', headless: 'new', args: ['--no-sandbox', '--enable-unsafe-swiftshader', '--use-gl=angle', '--use-angle=swiftshader'] });
+const page = await browser.newPage();
+await page.emulate({ viewport: { width: 390, height: 844, deviceScaleFactor: 2, isMobile: true, hasTouch: true }, userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148' });
+page.on('pageerror', (e) => console.log('[pageerror]', String(e).slice(0, 300)));
+page.on('console', (m) => { if (m.type() === 'error') console.log('[console.error]', m.text().slice(0, 200)); });
+await page.goto('http://localhost:8000/?noidle&emotion=happy', { waitUntil: 'load' });
+await page.waitForFunction('window.__ready || window.__error', { timeout: 120000 });
+await new Promise((r) => setTimeout(r, 4000));
+console.log(await page.$eval('#fps', (e) => e.textContent), '|', await page.$eval('#status', (e) => e.textContent));
+await page.screenshot({ path: out });
+await browser.close();

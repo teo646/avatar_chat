@@ -1,0 +1,79 @@
+{
+ "count": 133541,
+ "arrays": {
+  "xyz": {
+   "offset": 0,
+   "shape": [
+    133541,
+    3
+   ],
+   "dtype": "float32"
+  },
+  "scale": {
+   "offset": 1602492,
+   "shape": [
+    133541,
+    3
+   ],
+   "dtype": "float32"
+  },
+  "quat": {
+   "offset": 3204984,
+   "shape": [
+    133541,
+    4
+   ],
+   "dtype": "float32"
+  },
+  "color": {
+   "offset": 5341640,
+   "shape": [
+    133541,
+    3
+   ],
+   "dtype": "float32"
+  },
+  "opacity": {
+   "offset": 6944132,
+   "shape": [
+    133541
+   ],
+   "dtype": "float32"
+  },
+  "bary": {
+   "offset": 7478296,
+   "shape": [
+    133541,
+    3
+   ],
+   "dtype": "float32"
+  },
+  "wpix": {
+   "offset": 9080788,
+   "shape": [
+    133541,
+    5
+   ],
+   "dtype": "float32"
+  },
+  "vidx": {
+   "offset": 11751608,
+   "shape": [
+    133541,
+    3
+   ],
+   "dtype": "uint32"
+  }
+ },
+ "joints": [
+  "root",
+  "neck",
+  "jaw",
+  "leye",
+  "reye"
+ ],
+ "n_vertices": 5023,
+ "fov_y_deg": 22.357739674988167,
+ "camera_distance": 0.82,
+ "max_formula_error": 3.849325316829244e-08
+}

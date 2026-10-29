@@ -1,0 +1,18 @@
+import puppeteer from 'puppeteer-core';
+const [out] = process.argv.slice(2);
+const browser = await puppeteer.launch({ executablePath: '/usr/bin/google-chrome', headless: 'new', args: ['--no-sandbox', '--enable-unsafe-swiftshader', '--use-gl=angle', '--use-angle=swiftshader'] });
+const page = await browser.newPage();
+await page.setViewport({ width: 1280, height: 800 });
+page.on('pageerror', (e) => console.log('[pageerror]', String(e).slice(0, 300)));
+await page.goto('http://localhost:8000/?hold=0', { waitUntil: 'load' });
+await page.waitForFunction('window.__ready || window.__error', { timeout: 120000 });
+await page.type('#input', process.env.MSG || '방금 로또 1등 당첨됐어요!!');
+await page.click('#send');
+await new Promise((r) => setTimeout(r, 400));
+console.log('while waiting: thinking =', await page.evaluate(() => window.__avatar.driver.thinking), '| pending msg:', await page.$$eval('#bubble.pending', (e) => e.length));
+await page.waitForSelector('#bubble.show:not(.pending)', { timeout: 60000 });
+await new Promise((r) => setTimeout(r, 4000));
+console.log('emotion label:', await page.$eval('#emotion', (e) => e.textContent), '| status:', await page.$eval('#status', (e) => e.textContent));
+console.log('bot:', await page.$$eval('#bubble', (e) => e.map((x) => x.textContent)));
+await page.screenshot({ path: out });
+await browser.close();
