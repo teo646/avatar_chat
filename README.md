@@ -41,6 +41,7 @@ every emotion (neutral, happy, sad, angry, surprised, blink) is the posed FLAME 
     python make_emotion_presets.py --subject user_gaze0_wide --model output/user_gaze0_wide/run1 --out data/user/emotion_presets_gaze0_wide.json
     python export_rgbavatar_web.py --model output/user_gaze0_wide/run1 --presets data/user/emotion_presets_gaze0_wide.json \
                                    --out /home/ty/Codes/avatar_chat/web/assets/user
+    # the trained result (model.ply, shape.npy, config, metrics, preset renders, emotion presets) is kept in models/rgbavatar/tae_young/
     AVATAR_ASSET=custom ./run.sh          # the UIKA avatar again
 
 Why `--fix-gaze`: pixel3dmm does not track the gaze, its eyeball rotations are noise (median 138 degrees from straight ahead). A
